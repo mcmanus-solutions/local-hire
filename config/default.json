@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://GuyMcManus:Rws5es5v!@cluster0-q61lh.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "she-once-kicked-a-puppy-to-death",
+  "githubClientId": "1bd261ae848b8b4c866a",
+  "githubSecret": "ed77a807d750128dbdc93ad788a37709c32a39de"
+}
