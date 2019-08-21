@@ -45,3 +45,5 @@ const App = () => {
 };
 
 export default App;
+
+//so any route that we want to force the user to be logged in for we can use PrivateRoute
