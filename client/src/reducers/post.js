@@ -71,9 +71,9 @@ export default function(state = initialState, action) {
           ...state.post,
           comments: state.post.comments.filter(
             comment => comment._id !== payload
-          ),
-          loading: false
-        }
+          )
+        },
+        loading: false
       };
     default:
       return state;
