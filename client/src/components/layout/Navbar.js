@@ -4,57 +4,58 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 
+import * as Ui from './Navbar.styled';
+
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <ul>
-      <li>
-        <Link to='/profiles'>Developers</Link>
-      </li>
+    <Ui.Ul>
+      <Ui.Li>
+        <Link to='/profiles'>Profiles</Link>
+      </Ui.Li>
 
-      <li>
+      <Ui.Li>
         <Link to='/dashboard'>
-          <span className='hide-sm'>Dashboard</span>
+          <Ui.Span>Dashboard</Ui.Span>
         </Link>
-      </li>
-      <li>
+      </Ui.Li>
+      <Ui.Li>
         <Link to='/posts'>
-          <span className='hide-sm'>Posts</span>
+          <Ui.Span>Posts</Ui.Span>
         </Link>
-      </li>
-      <li>
-        <a onClick={logout} href='#!'>
-          <i className='fas fa-sign-out-alt' />{' '}
-          <span className='hide-sm'>Logout</span>
-        </a>
-      </li>
-    </ul>
+      </Ui.Li>
+      <Ui.Li>
+        <Ui.A onClick={logout} href='#!'>
+          <i className='fas fa-sign-out-alt' /> <Ui.Span>Logout</Ui.Span>
+        </Ui.A>
+      </Ui.Li>
+    </Ui.Ul>
   );
 
   const guestLinks = (
-    <ul>
-      <li>
+    <Ui.Ul>
+      <Ui.Li>
         <Link to='/profiles'>Developers</Link>
-      </li>
-      <li>
+      </Ui.Li>
+      <Ui.Li>
         <Link to='/register'>Register</Link>
-      </li>
-      <li>
+      </Ui.Li>
+      <Ui.Li>
         <Link to='/login'>Login</Link>
-      </li>
-    </ul>
+      </Ui.Li>
+    </Ui.Ul>
   );
 
   return (
-    <nav className='navbar bg-dark'>
+    <Ui.Navbar>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code' /> DevConnector
+          <i className='fas fa-code' /> Local Hire
         </Link>
       </h1>
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}
-    </nav>
+    </Ui.Navbar>
   );
 };
 

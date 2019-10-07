@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { deleteEducation } from '../../actions/profile';
+import * as Ui from './Education.styled';
 
 const Education = ({ education, deleteEducation }) => {
   const educations = education.map(edu => (
     <tr key={edu._id}>
       <td>{edu.school} </td>
 
-      <td className='hide-sm'>{edu.degree}</td>
+      <Ui.Td>{edu.degree}</Ui.Td>
       <td>
         <Moment format='YYYY/MM/DD'>{edu.from}</Moment> -{' '}
         {edu.to === null ? (
@@ -34,8 +35,8 @@ const Education = ({ education, deleteEducation }) => {
         <thead>
           <tr>
             <th>School</th>
-            <th className='hide-sm'>Degree</th>
-            <th className='hide-sm'>Years</th>
+            <Ui.Th>Degree</Ui.Th>
+            <Ui.Th>Years</Ui.Th>
             <th />
           </tr>
         </thead>
